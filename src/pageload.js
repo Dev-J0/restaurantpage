@@ -1,25 +1,39 @@
+import { home } from "./home" 
+
+
 export function loadMainPage() {
     console.log("Page loadeeeeeeeeed");
 
     const content = document.getElementById("content");
 
-    const title = document.createElement("h2");
-    title.textContent = "Welcome";
+    const menuContainer = document.createElement("div");
+menuContainer.setAttribute("class", "menuContainer");
 
-    const paragraphTitle = document.createElement("p");
-    paragraphTitle.textContent = "Please take a look at our menu";
 
-    content.appendChild(title);
-    content.appendChild(paragraphTitle);
+    const homeButton = document.createElement("button");
+    homeButton.innerText = "Home";
+    home();
 
- /*    const imgTitle = document.createElement("img");
-    imgTitle.src = "./how-to-draw-a-cartoon-animal.jpg";
-    content.appendChild(imgTitle);
 
-    const sideBar = document.createElement("div");
-    console.log("sidebar appearing?");
-    sideBar.innerText = "Sidebar";
-    sideBar.style.backgroundColor = "red";
+    const menuButton = document.createElement("button");
+    menuButton.innerText = "Menu";
 
-    content.appendChild(sideBar); */
+    const contactButton = document.createElement("button");
+    contactButton.innerText = "Contact";
+
+    menuContainer.appendChild(homeButton);
+    menuContainer.appendChild(menuButton);
+    menuContainer.appendChild(contactButton);
+
+
+    content.appendChild(menuContainer);
 }
+
+
+
+
+
+
+
+
+
