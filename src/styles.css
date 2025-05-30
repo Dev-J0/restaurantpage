@@ -6,26 +6,12 @@
  
  
  body {
-    background-color: rgb(19, 68, 62);
+    background-image: url(./black-white-background.jpg);  
+ background-size: cover;       /* Makes the image fill the page */
+  background-position: center;  /* Keeps it centered */
+  background-repeat: no-repeat;  
+  height: 100vh;
  }
 
 
- .menu {
-   display: flex;
-   flex-direction: column;
-   max-width: 10em;
-   gap: 2em;
-   padding-top: 5em;
- 
- }
 
-.menu > * {
-  margin: 0em 2em 0em 2em;
-}
-
-.title {
-   color: rgb(185, 200, 202);
-   background-color: rgb(77, 97, 90);
-   height: 10em;
-   font-size: 24px;
-}
