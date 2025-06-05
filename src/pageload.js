@@ -1,19 +1,17 @@
 
-import { home } from "./home" 
-import { contact } from "./contact"
+import { home } from "./home"
 import { menu } from "./menu"
+import { contact } from "./contact"
+
 
 export function loadMainPage() {
-    const content = document.getElementById("content");
+    const menuContent = document.getElementById("menuBar");
 
     const menuContainer = document.createElement("div");
-    menuContainer.setAttribute("class", "menuContainer");
-
+    menuContainer.className = "menuContainer";
 
     const homeButton = document.createElement("button");
     homeButton.innerText = "Home";
-    home();
-
 
     const menuButton = document.createElement("button");
     menuButton.innerText = "Menu";
@@ -21,42 +19,27 @@ export function loadMainPage() {
     const contactButton = document.createElement("button");
     contactButton.innerText = "Contact";
 
-
-
-    menuButton.addEventListener("click", function() {
-     //    content.innerHTML = "";
-            
-        console.log("Menu button clicked")
+    homeButton.addEventListener("click", function () {
+        home(); 
+        console.log("Home button clicked");
     });
 
-    homeButton.addEventListener("click", function() {
-        console.log("Homebutton clickeeeeed");
+      contactButton.addEventListener("click", function () {
+        contact(); 
+        console.log("Contact button clicked");
+    }); 
+    menuButton.addEventListener("click", function () {
+        menu(); 
+        console.log("Menu button clicked");
     });
-
-
-  contactButton.addEventListener("click", function() {
-        console.log("CLICK BUTTON");
-        contact();
-  })
-
-
-
-
-
 
   
 
     menuContainer.appendChild(homeButton);
     menuContainer.appendChild(menuButton);
     menuContainer.appendChild(contactButton);
-    content.appendChild(menuContainer);
+
+    menuContent.appendChild(menuContainer);
+
+    home();
 }
-
-
-
-
-
-
-
-
-

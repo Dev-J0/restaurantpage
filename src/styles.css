@@ -1,51 +1,112 @@
- * {
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
- }
- 
- 
- body {
-    background-image: url(./black-white-background.jpg);  
- background-size: cover;       /* Makes the image fill the page */
-  background-position: center;  /* Keeps it centered */
-  background-repeat: no-repeat;  
+body {
+  background-image: url(./black-white-background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 100vh;
- 
- }
-
-
-.menuContainer {
-  background-color:rgba(102, 104, 97, 0.671);
-  padding:  13em 3em 3em 3em; 
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 15%;
-  gap: 5em;
- 
+  font-family: sans-serif;
+  color: white;
+  margin: 0;
+  overflow: hidden; /* prevent scroll on body */
 }
 
+/* The main container that holds sidebar and content */
+#content {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
 
-  .menuContainer > button {
-  margin: 0 10px;
-  padding: 8px 16px;
+/* Sidebar navigation container */
+.menuContainer {
+  background-color: rgba(102, 104, 97, 0.67);
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  width: 13%;
+  gap: 2em;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+
+/* Buttons inside sidebar */
+.menuContainer > button {
+  padding: 10px 16px;
   background-color: #222;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
 
-.homeContainer {
+.menuContainer > button:hover {
+  background-color: #444;
+}
+
+/* General containers for content sections */
+.homeContainer,
+.contactContainer {
   background-color: rgba(3, 87, 55, 0.507);
-  height: 50%;
-  padding: 10em;
-  margin: 10em;
-
+  padding: 4em;
+  margin-left: 20%; /* leave room for sidebar */
+  flex-grow: 1;
+  height: 100vh;
+  overflow-y: auto;
+  box-sizing: border-box;
 }
 
-#content {
-   display: flex;
-  flex-direction: row-reverse;
+/* New class for restaurant menu content */
+.menuContent {
+  background-color: rgba(3, 87, 55, 0.507);
+  padding: 2em;
+  margin-left: 20%; /* leave space for fixed sidebar */
+  color: white;
+  flex-grow: 1;
+  height: 100vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Style for the menu list */
+.menuContent ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Each dish item */
+.menuContent li {
+  margin-bottom: 1.5em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 1em;
+}
+
+/* Dish name */
+.menuContent h3 {
+  margin: 0 0 0.3em 0;
+  font-weight: 600;
+}
+
+/* Dish description and price */
+.menuContent p {
+  margin: 0.2em 0;
+}
+
+/* Scrollbar styling for content if desired */
+.menuContent::-webkit-scrollbar {
+  width: 8px;
+}
+
+.menuContent::-webkit-scrollbar-track {
+  background: rgba(3, 87, 55, 0.2);
+}
+
+.menuContent::-webkit-scrollbar-thumb {
+  background-color: rgba(102, 104, 97, 0.5);
+  border-radius: 10px;
 }

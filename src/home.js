@@ -1,16 +1,36 @@
+
+    function hideAllSections() {
+    const sections = ["homeContainer", "restaurantMenu", "contactContainer"];
+    sections.forEach(id => {
+        const section = document.getElementById(id);
+        if (section) {
+            section.hidden = true;
+        }
+    });
+}
+
+
+
 export function home() {
-    const content = document.getElementById("content");
+    hideAllSections();
 
-    const homeContainer = document.createElement("div");
-    homeContainer.className = "homeContainer"; // Fixed
+    let homeContainer = document.getElementById("homeContainer");
+    if (!homeContainer) {
+        homeContainer = document.createElement("div");
+        homeContainer.id = "homeContainer";
+        homeContainer.className = "homeContainer";
 
-    const homeText = document.createElement("p");
-    homeText.innerText = "We keep it simple: good food, curious flavors, and zero nonsense. A menu that shifts with the mood, plates that don't shout, and a space where silence tastes like something. Come for the food. Stay until you remember you were hungry.";
+        const homeTitle = document.createElement("h1");
+        homeTitle.innerText = "Welcome to Our Restaurant";
 
-    const title = document.createElement("h1");
-    title.innerText = "Welcome to Salt & Static";
+        const homeText = document.createElement("p");
+        homeText.innerText = "Enjoy our delicious food and cozy atmosphere.";
 
-    homeContainer.appendChild(title);
-    homeContainer.appendChild(homeText);
-    content.appendChild(homeContainer);
+        homeContainer.appendChild(homeTitle);
+        homeContainer.appendChild(homeText);
+
+        document.getElementById("content").appendChild(homeContainer);
+    }
+
+    homeContainer.hidden = false;
 }
