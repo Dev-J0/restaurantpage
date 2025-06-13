@@ -1,17 +1,8 @@
+import { hideAllSections  } from "./hideSections";
 
-    function hideAllSections() {
-    const sections = ["homeContainer", "restaurantMenu", "contactContainer"];
-    sections.forEach(id => {
-        const section = document.getElementById(id);
-        if (section) {
-            section.hidden = true;
-        }
-    });
-}
 
 
     export function contact() {
-
 
     
     hideAllSections();
@@ -37,4 +28,5 @@
     contactContainer.appendChild(contactText);
 
     content.appendChild(contactContainer);
+      console.trace("contact() was called");
 }

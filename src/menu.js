@@ -15,7 +15,8 @@
 export function menu() {
      hideAllSections();
 
-    const existing = document.getElementById("menuContainer");
+const existing = document.getElementById("restaurantMenu");
+
     if (existing) {
         existing.hidden = false;
         return;

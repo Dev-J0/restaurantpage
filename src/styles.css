@@ -7,20 +7,19 @@ body {
   font-family: sans-serif;
   color: white;
   margin: 0;
-  overflow: hidden; /* prevent scroll on body */
+  overflow: hidden;
 }
 
-/* The main container that holds sidebar and content */
 #content {
   display: flex;
   height: 100vh;
   overflow: hidden;
 }
 
-/* Sidebar navigation container */
+
 .menuContainer {
-  background-color: rgba(102, 104, 97, 0.67);
-  padding: 2em;
+  background-color: rgba(6, 51, 45, 0.67);
+  padding: 11em 2em 3em 2em;
   display: flex;
   flex-direction: column;
   width: 13%;
@@ -30,15 +29,15 @@ body {
   top: 0;
   left: 0;
   box-sizing: border-box;
+
 }
 
-/* Buttons inside sidebar */
 .menuContainer > button {
   padding: 10px 16px;
-  background-color: #222;
+  background-color: #799a9b;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.3s ease;
@@ -48,56 +47,50 @@ body {
   background-color: #444;
 }
 
-/* General containers for content sections */
 .homeContainer,
-.contactContainer {
-  background-color: rgba(3, 87, 55, 0.507);
-  padding: 4em;
-  margin-left: 20%; /* leave room for sidebar */
-  flex-grow: 1;
-  height: 100vh;
-  overflow-y: auto;
-  box-sizing: border-box;
-}
-
-/* New class for restaurant menu content */
+.contactContainer,
 .menuContent {
-  background-color: rgba(3, 87, 55, 0.507);
-  padding: 2em;
-  margin-left: 20%; /* leave space for fixed sidebar */
-  color: white;
+  background-color: rgba(37, 88, 69, 0.747);
+  padding: 4em;
+  margin-left: 20%; 
   flex-grow: 1;
   height: 100vh;
   overflow-y: auto;
   box-sizing: border-box;
+  height: 35rem;
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  border-radius: 10px;
 }
+ 
 
-/* Style for the menu list */
+
 .menuContent ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* Each dish item */
+
 .menuContent li {
   margin-bottom: 1.5em;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding-bottom: 1em;
 }
 
-/* Dish name */
+
 .menuContent h3 {
   margin: 0 0 0.3em 0;
   font-weight: 600;
 }
 
-/* Dish description and price */
+
 .menuContent p {
   margin: 0.2em 0;
 }
 
-/* Scrollbar styling for content if desired */
+
 .menuContent::-webkit-scrollbar {
   width: 8px;
 }

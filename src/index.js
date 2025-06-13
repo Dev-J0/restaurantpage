@@ -9,4 +9,3 @@ import { contact } from "./contact"
 
 loadMainPage();
 
-contact();

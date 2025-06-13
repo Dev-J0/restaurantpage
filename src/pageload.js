@@ -25,7 +25,7 @@ export function loadMainPage() {
     });
 
       contactButton.addEventListener("click", function () {
-        contact(); 
+        contact();
         console.log("Contact button clicked");
     }); 
     menuButton.addEventListener("click", function () {
